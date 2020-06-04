@@ -2,15 +2,37 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import useInputChange from '../hooks/useInputChange';
-import updateUser from '../actions/actions';
+import { updateUser } from '../actions/actions';
 
 
 const mapStateToProps = store => ({
-  
+  firstName: store.userReducer.firstName,
+  lastName:  store.userReducer.lastName,
+  userName:  store.userReducer.userName,
+  email:  store.userReducer.email,
+  password:  store.userReducer.password,
+  confirmPassword:  store.userReducer.confirmPassword
 })
 
 const mapDispatchToProps = dispatch => ({
-
+  updateUser: (
+    firstName,
+    lastName,
+    userName,
+    email,
+    password,
+    confirmPassword
+  ) => 
+    dispatch(
+      updateUser({
+        firstName,
+        lastName,
+        userName,
+        email,
+        password,
+        confirmPassword
+      })
+    )
 })
 
 
@@ -22,12 +44,6 @@ const SignUp = props => {
   const { value: email, bind: setEmail } = useInputChange(props.email);
   const { value: password, bind: setPassword } = useInputChange(props.password);
   const { value: confirmPassword, bind: setConfirmPassword } = useInputChange(props.confirmPassword);
-    // firstname
-    // lastname
-    // username
-    // email
-    // password
-    // confirm password
   return (
     <div>Signup For Our Service
       <form className = "form">
@@ -74,7 +90,7 @@ const SignUp = props => {
           {...setConfirmPassword}
         />
         <NavLink
-          className="submitButton"
+          className="button"
           to="/verify"
           onClick={() => 
             props.updateUser(
