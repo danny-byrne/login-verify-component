@@ -4,9 +4,16 @@ const PORT = 5555;
 const path = require('path');
 const bodyParser = require('body-parser');
 const userController = require("./database/userController");
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json())
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.post('/createuser', userController.postUser, (req, res) => {
   return res.status(200).json();

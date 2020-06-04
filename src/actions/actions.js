@@ -8,7 +8,8 @@ export const updateUser = (input) => {
   }
 } 
 
-export const submit = (dispatch, getState) => {
+export const submit = () => (dispatch, getState) => {
+  console.log('registering')
   const {
     firstName,
     lastName,
@@ -17,13 +18,19 @@ export const submit = (dispatch, getState) => {
     password
   } = getState().userReducer;
 
-  axios.post('url', {
+  const user = [
     firstName,
     lastName,
     userName,
     email,
     password
-  }).then(res => {
-    return res.json()
-  });
+  ];
+
+  console.log('user is:', user)
+
+  axios.post('http://localhost:5555', user)
+    .then(res => {
+      return res.json()
+    })
+    .catch(err => console.log('Error posting to users:', err))
 };
