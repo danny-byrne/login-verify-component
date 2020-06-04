@@ -18,17 +18,17 @@ export const submit = () => (dispatch, getState) => {
     password
   } = getState().userReducer;
 
-  const user = [
+  const user = {
     firstName,
     lastName,
     userName,
     email,
     password
-  ];
+  };
 
   console.log('user is:', user)
 
-  axios.post('http://localhost:5555', user)
+  axios.post('http://localhost:5555/createuser', user)
     .then(res => {
       return res.json()
     })
