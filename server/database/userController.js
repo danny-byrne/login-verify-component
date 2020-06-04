@@ -13,10 +13,10 @@ module.exports = {
       userName,
       email,
       password ];
-    let query = "INSERT into Users (firstname, lastname, username, email, password)";
+    let query = "INSERT into Users (firstname, lastname, username, email, password) VALUES ($1, $2, $3, $4, $5);";
     db.query(query, params, (err, res) => {
       if (err){
-        next(err)
+        next()
       } else {
         console.log('succesfully created user')
         next(res);
