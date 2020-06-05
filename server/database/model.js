@@ -7,7 +7,7 @@ const pool = new Pool({
   port: 5432,
  });
 
-const queryString = "CREATE TABLE IF NOT EXISTS Users (firstname VARCHAR, lastname  VARCHAR, username  VARCHAR, email  VARCHAR, password VARCHAR)";
+const queryString = "CREATE TABLE IF NOT EXISTS Users (firstname VARCHAR NOT NULL, lastname VARCHAR NOT NULL, username VARCHAR NOT NULL, email VARCHAR NOT NULL, password VARCHAR NOT NULL)";
 
 pool.query(queryString, (err, result) => {
   if(err) {
@@ -18,3 +18,4 @@ pool.query(queryString, (err, result) => {
 })
 
 module.exports = pool; 
+
