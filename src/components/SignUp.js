@@ -45,8 +45,9 @@ const SignUp = props => {
   const { value: password, bind: setPassword } = useInputChange(props.password);
   const { value: confirmPassword, bind: setConfirmPassword } = useInputChange(props.confirmPassword);
   return (
-    <div>Signup For Our Service
+    <div className="container">
       <form className = "form">
+      <h2>Sign Up!</h2>
         <input 
           className = "input"
           type="text"

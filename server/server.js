@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const PORT = 5555;
-const path = require('path');
 const bodyParser = require('body-parser');
 const userController = require("./database/userController");
 const cors = require('cors');

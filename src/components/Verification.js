@@ -25,17 +25,17 @@ const Verification = (props) => {
           userName,
           email } = props;
   return (
-    <div className="verify">
-      <h1>Please make sure your information is correct</h1>
+    <div className="container">
+      <h2>Please make sure your information is correct</h2>
       <p>First: {firstName}</p>
       <p>Last: {lastName}</p>
       <p>Username: {userName}</p>
       <p>Email: {email}</p>
-      <NavLink className="button" onClick={submit} to="/confirm">
-        Register!
-      </NavLink>
       <NavLink className="button" to="/">
         Make a change
+      </NavLink>
+      <NavLink className="button" onClick={submit} to="/confirm">
+        Register!
       </NavLink>
     </div>
   )

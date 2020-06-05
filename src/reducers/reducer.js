@@ -18,6 +18,7 @@ const userReducer = (state = initialState, action) => {
       const newEmail = action.payload.email;
       const newPass = action.payload.password;
       const newConfirmPass = action.payload.newPassword;
+      
       return {
         ...state,
         firstName: newFirst,
@@ -28,11 +29,20 @@ const userReducer = (state = initialState, action) => {
         confirmPassword: newConfirmPass
       }
     }
+
+    case types.RESET_USER: {
+      return {
+        firstName: "",
+        lastName: "",
+        userName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+      }
+    }
     default:
       return state;
   }
-
-  
 } 
 
 export default userReducer;

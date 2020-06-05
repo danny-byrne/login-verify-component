@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+
+$backgroundColor: rgb(176, 188, 226);
+$offWhite: rgb(248, 248, 248);
+
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
+body {
+  min-width: 100vh;
+  min-height: 100vh;
+  color: $offWhite;
+  font-family: "Exo", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  background-color: $backgroundColor;
+}
+
+.container {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  text-align: center;
+  // margin-top: 1em;
+
+  form {
+    // background-color: rebeccapurple;
+    background-color: rgb(151, 167, 223);
+    border: 1px solid $offWhite;
+    border-radius: 5px;
+    width: 20em;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    
+
+
+    input {
+      margin-top: 1em;
+      // padding: 25px;
+      // margin-top: .3em;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      display: inline-block;
+      width: 20em;
+      height: 1.5rem;
+      border: 1px solid $offWhite;
+      border-radius: 5px;
+      text-align: center;
+    } 
+
+    .confirmation {
+      display: inline-block;
+      margin: auto;
+    }
+
+    h2 {
+      margin-top: .5em;
+    }
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+
+
+  .button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    // margin: 1em;
+    background: $offWhite;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: inline-block;
+    color: $backgroundColor;
+    width: 9em;
+    text-align: center;
+    text-decoration: none;
+  }
+}

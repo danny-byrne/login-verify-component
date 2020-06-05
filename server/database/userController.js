@@ -16,7 +16,7 @@ module.exports = {
     let query = "INSERT into Users (firstname, lastname, username, email, password) VALUES ($1, $2, $3, $4, $5);";
     db.query(query, params, (err, res) => {
       if (err){
-        next()
+        next(err)
       } else {
         console.log('succesfully created user')
         next(res);

@@ -4,12 +4,12 @@ import Confirmation from './components/Confirmation';
 import SignUp from './components/SignUp';   
 import Verification from './components/Verification';   
 
-import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      Hello
+    <div className="app">
+
       <Router>
         <Switch>
           <Route exact path="/" component={SignUp} />
@@ -17,6 +17,7 @@ function App() {
           <Route part="/confirm" component={Confirmation} />
         </Switch>
       </Router>
+
     </div>
   );
 }

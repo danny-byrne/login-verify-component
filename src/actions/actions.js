@@ -8,6 +8,13 @@ export const updateUser = (input) => {
   }
 } 
 
+export const resetUser = (e) => {
+  return {  
+    type: types.RESET_USER,
+    payload: e
+  }
+}
+
 export const submit = () => (dispatch, getState) => {
   console.log('registering')
   const {
