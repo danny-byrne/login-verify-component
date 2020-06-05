@@ -2,7 +2,6 @@ const db = require('./model');
 
 module.exports = {
   postUser: function (req, res, next) {
-    console.log('inside userController.postUser, req.body is', req.body)
     let { firstName,
       lastName,
       userName,

@@ -16,7 +16,6 @@ export const resetUser = (e) => {
 }
 
 export const submit = () => (dispatch, getState) => {
-  console.log('registering')
   const {
     firstName,
     lastName,
